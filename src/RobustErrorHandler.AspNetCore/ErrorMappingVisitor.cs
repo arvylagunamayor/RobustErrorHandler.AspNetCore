@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RobustErrorHandler.Core;
 using System;
 
 namespace RobustErrorHandler.AspNetCore
@@ -38,6 +40,6 @@ namespace RobustErrorHandler.AspNetCore
 
 
         public ActionResult<TModel> Visit(Error.Unauthorized result)
-            => new StatusCodeResult(StatusCodes.Status403Forbidden);
+            => new StatusCodeResult(StatusCodes.Status401Unauthorized);
     }
 }

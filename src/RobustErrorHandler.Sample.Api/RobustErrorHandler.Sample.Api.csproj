@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,11 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\RobustErrorHandler\src\RobustErrorHandler.Core\RobustErrorHandler.Core.csproj" />
+    <ProjectReference Include="..\RobustErrorHandler.AspNetCore.ShapeDomain\RobustErrorHandler.AspNetCore.ShapeDomain.csproj" />
+    <ProjectReference Include="..\RobustErrorHandler.AspNetCore\RobustErrorHandler.AspNetCore.csproj" />
   </ItemGroup>
+
 
 </Project>
