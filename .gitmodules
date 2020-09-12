@@ -1,0 +1,3 @@
+[submodule "RobustErrorHandler"]
+	path = RobustErrorHandler
+	url = https://github.com/arvylagunamayor/RobustErrorHandler.git
