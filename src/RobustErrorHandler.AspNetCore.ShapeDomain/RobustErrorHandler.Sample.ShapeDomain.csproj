@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>RobustErrorHandler.Sample.ShapeDomain</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RobustErrorHandler\src\RobustErrorHandler.Core\RobustErrorHandler.Core.csproj" />
+    <PackageReference Include="RobustErrorHandlerAspNetCore" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

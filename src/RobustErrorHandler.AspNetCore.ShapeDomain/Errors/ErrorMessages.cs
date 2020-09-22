@@ -1,10 +1,6 @@
 ﻿using RobustErrorHandler.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace RobustErrorHandler.AspNetCore.ShapeDomain
+namespace RobustErrorHandler.Sample.ShapeDomain
 {
     public static class ErrorMessages
     {

@@ -1,16 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>RobustErrorHandlerAspNetCore</PackageId>
+    <Title>Robust Error Handler AspNetCore</Title>
+    <PackageDescription>Aspnet Core extention of https://www.nuget.org/packages/RobustErrorHandler/ </PackageDescription>
+    <Version>1.0.1</Version>
+    <Authors>Arvy L. Mayor</Authors>
+    <Company>IT-ERA TECHNOLOGY SOLUTIONS</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\RobustErrorHandler\src\RobustErrorHandler.Core\RobustErrorHandler.Core.csproj" />
+    <PackageReference Include="RobustErrorHandler" Version="1.0.0" />
   </ItemGroup>
 
 </Project>

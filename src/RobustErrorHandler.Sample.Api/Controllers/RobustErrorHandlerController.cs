@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RobustErrorHandler.AspNetCore.ShapeDomain;
-using RobustErrorHandler.Sample.Api.DTO;
-using RobustErrorHandler.Core;
 using RobustErrorHandler.AspNetCore;
+using RobustErrorHandler.Core;
+using RobustErrorHandler.Sample.ShapeDomain;
 using System.Collections.Generic;
 
 namespace RobustErrorHandler.Sample.Api.Controllers
