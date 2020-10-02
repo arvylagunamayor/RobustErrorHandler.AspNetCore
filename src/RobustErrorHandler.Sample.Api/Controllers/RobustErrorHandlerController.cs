@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RobustErrorHandler.AspNetCore;
 using RobustErrorHandler.Core;
+using RobustErrorHandler.Core.Errors;
+using RobustErrorHandler.Core.SuccessCollection;
 using RobustErrorHandler.Sample.ShapeDomain;
 using System.Collections.Generic;
 
@@ -12,17 +14,19 @@ namespace RobustErrorHandler.Sample.Api.Controllers
     {
         [HttpPost]
         [Route("/Calculate/{type}/Perimeter")]
-        public ActionResult<int> GetShapePeremeter(ShapeType type, [FromBody]IList<int> shapeData)
+        public ActionResult<int> GetShapePiremeter(ShapeType type, [FromBody]IList<int> shapeData)
         {
             switch (type)
             {
                 case ShapeType.Rectangle:
                     {
-                        return Rectangle.Create(shapeData)
-                            .Map((data) =>
+                        var test = Rectangle.Create(shapeData)
+                            .FlatMap((success) =>
                             {
-                                return data.GetPerimeter();
-                            }).ToActionResult();
+                                return Result.Created(success.Value.GetPerimeter());
+                            });
+
+                        return test.ToActionResult();
                     }
                 default:
                     {
@@ -30,7 +34,7 @@ namespace RobustErrorHandler.Sample.Api.Controllers
                     }
             }
 
-            return 0;
+            return null;
         }
     }
 }

@@ -5,16 +5,19 @@
     <PackageId>RobustErrorHandlerAspNetCore</PackageId>
     <Title>Robust Error Handler AspNetCore</Title>
     <PackageDescription>Aspnet Core extention of https://www.nuget.org/packages/RobustErrorHandler/ </PackageDescription>
-    <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType> 
+    <Version>1.1.7</Version>
     <Authors>Arvy L. Mayor</Authors>
-    <Company>IT-ERA TECHNOLOGY SOLUTIONS</Company>
+    <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="RobustErrorHandler" Version="1.0.0" />
+    <PackageReference Include="RobustErrorHandler" Version="1.1.7" />
   </ItemGroup>
 
 </Project>

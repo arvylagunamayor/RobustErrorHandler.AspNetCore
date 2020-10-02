@@ -6,11 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="8.1.0" />
-    <PackageReference Include="RobustErrorHandlerAspNetCore" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RobustErrorHandler.AspNetCore.ShapeDomain\RobustErrorHandler.Sample.ShapeDomain.csproj" />
+    <ProjectReference Include="..\RobustErrorHandler.AspNetCore\RobustErrorHandler.AspNetCore.csproj" />
   </ItemGroup>
 
 

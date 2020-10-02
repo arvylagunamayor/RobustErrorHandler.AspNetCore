@@ -1,4 +1,6 @@
 ﻿using RobustErrorHandler.Core;
+using RobustErrorHandler.Core.Errors;
+using RobustErrorHandler.Core.SuccessCollection;
 using System.Collections.Generic;
 
 namespace RobustErrorHandler.Sample.ShapeDomain
@@ -9,12 +11,12 @@ namespace RobustErrorHandler.Sample.ShapeDomain
         {
         }
 
-        public static Either<Error, Rectangle> Create(IList<int> sides)
+        public static Either<Error, Success<Rectangle>> Create(IList<int> sides)
         {
             if (sides.Count != 4)
-                return Result.Invalid<Rectangle>(new ErrorMessages.NotEnoughSides(4));
+                return Result.Invalid<Success<Rectangle>>(new ErrorMessages.NotEnoughSides(4));
             else
-                return Result.Success(new Rectangle(sides));
+                return Result.Created(new Rectangle(sides));
         }
 
         public override int GetPerimeter()
