@@ -13,5 +13,11 @@
     <ProjectReference Include="..\RobustErrorHandler.AspNetCore\RobustErrorHandler.AspNetCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="RobustErrorHandler.Core">
+      <HintPath>..\..\..\RobustErrorHandler\src\RobustErrorHandler.Core\bin\Release\netstandard2.0\RobustErrorHandler.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>

@@ -25,8 +25,6 @@ SOFTWARE.
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RobustErrorHandler.Core;
-using RobustErrorHandler.Core.Errors;
-using RobustErrorHandler.Core.SuccessCollection;
 using System;
 
 namespace RobustErrorHandler.AspNetCore
@@ -34,11 +32,15 @@ namespace RobustErrorHandler.AspNetCore
     public static class ResultExtensions
     {
 
+        public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, TValue> result)
+            => result.Fold(
+                left: error => ToErrorResult<TValue>(error),
+                right: success => ToSuccessResult(success, value => value));
+
         public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, Success<TValue>> result)
             => result.Fold(
                 left: error => ToErrorResult<TValue>(error),
-                right: success => ToSuccessResult(success)
-                );
+                right: success => ToSuccessResult<TValue, TValue>(success));
         //    /*public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, TValue> result)
         //        => result.Fold(
         //            left: error => ToErrorResult<TValue>(error),
@@ -90,18 +92,20 @@ namespace RobustErrorHandler.AspNetCore
 
         //    private static ActionResult<TModel> ToSuccessResult<TModel, TValue>(Success<TValue> success)
         //        => success.Accept<SuccessMappingVisitor<TModel, TValue>, ActionResult<TModel>>(new SuccessMappingVisitor<TModel, TValue>());
-
+        private static ActionResult<TModel> ToSuccessResult<TValue, TModel>(
+            TValue result, Func<TValue, TModel> valueMapper)
+            => result is Unit
+            ? (ActionResult<TModel>)new NoContentResult()
+            : valueMapper(result);
 
         private static ActionResult<TModel> ToSuccessResult<TModel, TValue>(Success<TValue> success)
             => success.Accept<SuccessMappingVisitor<TModel, TValue>, ActionResult<TModel>>(new SuccessMappingVisitor<TModel, TValue>());
 
-        private static ActionResult ToSuccessResult<TValue>(Success<TValue> success)
-            => success.Accept<SuccessMappingVisitor<object, TValue>, ActionResult<object>>(new SuccessMappingVisitor<object, TValue>()).Result;
-
         private static ActionResult<TModel> ToErrorResult<TModel>(Error error)
-            => error.Accept<ErrorMappingVisitor<TModel>, ActionResult<TModel>>(new ErrorMappingVisitor<TModel>());
+        => error.Accept<ErrorMappingVisitor<TModel>, ActionResult<TModel>>(new ErrorMappingVisitor<TModel>());
 
         private static ActionResult ToErrorResult(Error error)
             => error.Accept<ErrorMappingVisitor<object>, ActionResult<object>>(new ErrorMappingVisitor<object>()).Result;
+
     }
 }

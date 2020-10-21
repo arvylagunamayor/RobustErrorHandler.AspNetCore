@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RobustErrorHandler.AspNetCore;
 using RobustErrorHandler.Core;
-using RobustErrorHandler.Core.Errors;
-using RobustErrorHandler.Core.SuccessCollection;
 using RobustErrorHandler.Sample.ShapeDomain;
 using System.Collections.Generic;
 
@@ -21,9 +19,9 @@ namespace RobustErrorHandler.Sample.Api.Controllers
                 case ShapeType.Rectangle:
                     {
                         var test = Rectangle.Create(shapeData)
-                            .FlatMap((success) =>
+                            .Map((success) =>
                             {
-                                return Result.Created(success.Value.GetPerimeter());
+                                return success.GetPerimeter();
                             });
 
                         return test.ToActionResult();

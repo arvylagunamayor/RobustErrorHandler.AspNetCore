@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 using Microsoft.AspNetCore.Mvc;
-using RobustErrorHandler.Core.Errors;
+using RobustErrorHandler.Core;
 
 namespace RobustErrorHandler.AspNetCore
 {
