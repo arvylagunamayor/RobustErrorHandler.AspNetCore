@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using RobustErrorHandler.Core;
 
 namespace RobustErrorHandler.AspNetCore
@@ -47,10 +46,10 @@ namespace RobustErrorHandler.AspNetCore
         #region HTTP STATUS 2xx
 
         public ActionResult<TModel> Visit(TValue result)
-            => new OkObjectResult(result);
+            => new SuccessObjectResult(result);
 
         public ActionResult<TModel> Visit(Success<TValue>.Ok result)
-            => new CreatedObjectResult(result.Value);
+            => new SuccessObjectResult(result.Value);
 
         public ActionResult<TModel> Visit(Success<TValue>.Created result)
             => new CreatedObjectResult(result.Value);

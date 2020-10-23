@@ -1,5 +1,4 @@
-﻿
-using RobustErrorHandler.Core;
+﻿using RobustErrorHandler.Core;
 using System.Collections.Generic;
 
 namespace RobustErrorHandler.Sample.ShapeDomain

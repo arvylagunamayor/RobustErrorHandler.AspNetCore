@@ -102,7 +102,7 @@ namespace RobustErrorHandler.AspNetCore
             => success.Accept<SuccessMappingVisitor<TModel, TValue>, ActionResult<TModel>>(new SuccessMappingVisitor<TModel, TValue>());
 
         private static ActionResult<TModel> ToErrorResult<TModel>(Error error)
-        => error.Accept<ErrorMappingVisitor<TModel>, ActionResult<TModel>>(new ErrorMappingVisitor<TModel>());
+            => error.Accept<ErrorMappingVisitor<TModel>, ActionResult<TModel>>(new ErrorMappingVisitor<TModel>());
 
         private static ActionResult ToErrorResult(Error error)
             => error.Accept<ErrorMappingVisitor<object>, ActionResult<object>>(new ErrorMappingVisitor<object>()).Result;

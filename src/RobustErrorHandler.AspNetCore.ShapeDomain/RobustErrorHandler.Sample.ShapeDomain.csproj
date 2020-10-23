@@ -6,13 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RobustErrorHandler.AspNetCore\RobustErrorHandler.AspNetCore.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="RobustErrorHandler.Core">
-      <HintPath>..\..\..\RobustErrorHandler\src\RobustErrorHandler.Core\bin\Release\netstandard2.0\RobustErrorHandler.Core.dll</HintPath>
-    </Reference>
+    <PackageReference Include="RobustErrorHandler" Version="1.2.2" />
   </ItemGroup>
 
 </Project>

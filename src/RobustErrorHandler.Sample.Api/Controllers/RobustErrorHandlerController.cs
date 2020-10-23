@@ -19,9 +19,9 @@ namespace RobustErrorHandler.Sample.Api.Controllers
                 case ShapeType.Rectangle:
                     {
                         var test = Rectangle.Create(shapeData)
-                            .Map((success) =>
+                            .FlatMap((success) =>
                             {
-                                return success.GetPerimeter();
+                                return Result.Created(success.GetPerimeter());
                             });
 
                         return test.ToActionResult();

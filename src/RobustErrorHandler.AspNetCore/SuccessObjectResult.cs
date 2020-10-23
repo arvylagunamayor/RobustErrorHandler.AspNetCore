@@ -37,6 +37,14 @@ namespace RobustErrorHandler.AspNetCore
 
     #region HTTP STATUS 2xx
 
+    public class SuccessObjectResult : ObjectResult
+    {
+        public SuccessObjectResult(object value) : base(value)
+        {
+            StatusCode = StatusCodes.Status200OK;
+        }
+    }
+
     public class CreatedObjectResult : ObjectResult
     {
         public CreatedObjectResult(object value) : base(value)
