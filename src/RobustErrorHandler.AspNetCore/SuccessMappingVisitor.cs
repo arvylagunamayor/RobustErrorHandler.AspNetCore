@@ -61,7 +61,7 @@ namespace RobustErrorHandler.AspNetCore
             => new NonAuthoritativeInformationObjectResult(result.Value);
 
         public ActionResult<TModel> Visit(Success<TValue>.NoContent result)
-            => new NoContentObjectResult(result.Value);
+            => new NoContentResult();
 
         public ActionResult<TModel> Visit(Success<TValue>.ResetContent result)
             => new ResetContentObjectResult(result.Value);

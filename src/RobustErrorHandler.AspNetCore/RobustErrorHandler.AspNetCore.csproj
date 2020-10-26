@@ -7,13 +7,13 @@
     <PackageDescription>Aspnet Core extention of https://www.nuget.org/packages/RobustErrorHandler/ </PackageDescription>
     <RepositoryUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</RepositoryUrl>
     <RepositoryType>git</RepositoryType> 
-    <Version>1.2.4</Version>
+    <Version>1.2.5</Version>
     <Authors>Arvy L. Mayor</Authors>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</PackageProjectUrl>
-    <AssemblyVersion>1.2.4.0</AssemblyVersion>
-    <FileVersion>1.2.4.0</FileVersion>
+    <AssemblyVersion>1.2.5.0</AssemblyVersion>
+    <FileVersion>1.2.5.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
