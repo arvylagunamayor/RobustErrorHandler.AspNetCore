@@ -41,57 +41,7 @@ namespace RobustErrorHandler.AspNetCore
             => result.Fold(
                 left: error => ToErrorResult<TValue>(error),
                 right: success => ToSuccessResult<TValue, TValue>(success));
-        //    /*public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, TValue> result)
-        //        => result.Fold(
-        //            left: error => ToErrorResult<TValue>(error),
-        //            right: success => ToSuccessResult(success, value => value));
-
-
-
-        //         */
-        //    public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, TValue> result)
-        //        => result.Fold(
-        //            left: error => ToErrorResult<TValue>(error),
-        //            right: success => ToSuccessResult(success, value => value));
-
-        //    public static ActionResult<TValue> ToActionResult<TValue>(this Either<Error, Either<Error, Success<int>>> result)
-        //        => result.Fold(left: error => ToErrorResult<TValue>(error),
-        //            right: succes => ToSuccessResult();
-
-        //    public static ActionResult<TModel> ToActionResult<TModel, TValue>(this Either<Error, Success<TValue>> result)
-        //        => result.Fold(
-        //            left: error => ToErrorResult<TModel>(error),
-        //            right: success => ToSuccessResult<TModel, TValue>(success));
-
-        //    public static ActionResult<TModel> ToActionResult<TValue, TModel>(
-        //        this Either<Error, TValue> result,
-        //        Func<TValue, TModel> valueMapper)
-        //        => result.Fold(
-        //            left: error => ToErrorResult<TModel>(error),
-        //            right: success => ToSuccessResult(success, valueMapper)
-        //        );
-
-        //    public static ActionResult ToUntypedActionResult<TValue>(
-        //        this Either<Error, TValue> result,
-        //        Func<TValue, ActionResult> successMapper)
-        //        => result.Fold(
-        //            left: error => ToErrorResult(error),
-        //            right: successMapper);
-
-        //    private static ActionResult<TModel> ToSuccessResult<TValue, TModel>(
-        //        TValue result,
-        //        Func<TValue, TModel> valueMapper)
-        //        => valueMapper(result);
-
-        //    //private static ActionResult<TModel> ToSuccessResult<TValue, TModel>(
-        //    //    TValue result,
-        //    //    Func<TValue, TModel> valueMapper)
-        //    //    => result is Unit
-        //    //        ? (ActionResult<TModel>) new NoContentResult()
-        //    //        : valueMapper(result);
-
-        //    private static ActionResult<TModel> ToSuccessResult<TModel, TValue>(Success<TValue> success)
-        //        => success.Accept<SuccessMappingVisitor<TModel, TValue>, ActionResult<TModel>>(new SuccessMappingVisitor<TModel, TValue>());
+        
         private static ActionResult<TModel> ToSuccessResult<TValue, TModel>(
             TValue result, Func<TValue, TModel> valueMapper)
             => result is Unit

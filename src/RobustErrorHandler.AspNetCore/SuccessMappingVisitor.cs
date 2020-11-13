@@ -29,20 +29,6 @@ namespace RobustErrorHandler.AspNetCore
 {
     public readonly struct SuccessMappingVisitor<TModel, TValue> : Success<TValue>.ISucessVisitor<ActionResult<TModel>>
     {
-        #region HTTP STATUS 1xx
-
-
-        public ActionResult<TModel> Visit(Success<TValue>.Continue result)
-            => new ContinueObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.SwitchingProtocols result)
-            => new SwitchingProtocolsObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.Processing result)
-            => new ProcessingObjectresult(result.Value);
-
-        #endregion
-
         #region HTTP STATUS 2xx
 
         public ActionResult<TModel> Visit(TValue result)
@@ -54,59 +40,10 @@ namespace RobustErrorHandler.AspNetCore
         public ActionResult<TModel> Visit(Success<TValue>.Created result)
             => new CreatedObjectResult(result.Value);
 
-        public ActionResult<TModel> Visit(Success<TValue>.Accepted result)
-            => new AcceptedObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.NonAuthoritativeInformation result)
-            => new NonAuthoritativeInformationObjectResult(result.Value);
-
         public ActionResult<TModel> Visit(Success<TValue>.NoContent result)
             => new NoContentResult();
 
-        public ActionResult<TModel> Visit(Success<TValue>.ResetContent result)
-            => new ResetContentObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.PartialContent result)
-            => new PartialContentObjectresult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.MultiStatus result)
-            => new MultiStatusObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.AlreadyReported result)
-            => new AlreadyReportedObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.ImUsed result)
-            => new ImUsedObjectResult(result.Value);
-
-        #endregion
-
-        #region HTTP STATUS 3xx
-
-        public ActionResult<TModel> Visit(Success<TValue>.MutipleChoices result)
-            => new MutipleChoicesObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.MovedPermanently result)
-            => new MovedPermanentlyObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.Found result)
-            => new FoundObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.SeeOther result)
-            => new SeeOtherObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.NotModified result)
-            => new NotModifiedObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.UseProxy result)
-            => new UseProxyObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.TemporaryRedirect result)
-            => new TemporaryRedirectObjectResult(result.Value);
-
-        public ActionResult<TModel> Visit(Success<TValue>.PermanentRedirect result)
-            => new PermanentRedirectObjectResult(result.Value);
-
-
         #endregion
     }
+        
 }
