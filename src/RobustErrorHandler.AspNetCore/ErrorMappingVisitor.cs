@@ -42,7 +42,8 @@ namespace RobustErrorHandler.AspNetCore
 
         public ActionResult<TModel> Visit(Error.NotFound result)
             => new NotFoundObjectResult(result.Message);
-
+        public ActionResult<TModel> Visit(Error.Conflict result)
+            => new ConflictObjectResult(result.Message);
         #endregion
 
         #region HTTP STATUS 5xx Errors
