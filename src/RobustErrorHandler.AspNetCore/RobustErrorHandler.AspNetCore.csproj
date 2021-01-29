@@ -7,22 +7,23 @@
     <PackageDescription>Aspnet Core extention of https://www.nuget.org/packages/RobustErrorHandler/ </PackageDescription>
     <RepositoryUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</RepositoryUrl>
     <RepositoryType>git</RepositoryType> 
-    <Version>1.3.0</Version>
+    <Version>1.4.0</Version>
     <Authors>Arvy L. Mayor</Authors>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/arvylagunamayor/RobustErrorHandler.AspNetCore</PackageProjectUrl>
-    <AssemblyVersion>1.2.5.0</AssemblyVersion>
-    <FileVersion>1.2.5.0</FileVersion>
+    <AssemblyVersion>1.4.0.0</AssemblyVersion>
+    <FileVersion>1.4.0.0</FileVersion>
     <PackageReleaseNotes>* Updated to .net 5
-* Update core handler to v1.3.1</PackageReleaseNotes>
+* Update core handler to v1.4.0
+* Added conflict error</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-    <PackageReference Include="RobustErrorHandler" Version="1.3.1" />
+    <PackageReference Include="RobustErrorHandler" Version="1.4.0" />
   </ItemGroup>
 
 </Project>
